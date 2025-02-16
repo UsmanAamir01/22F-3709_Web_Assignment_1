@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bank Account Simulation</h1>
+    </header>
+
+    <main>
+      <section id="accountCreation">
+        <h2>Create Your Account</h2>
+        <form id="accountForm">
+          <label for="rollNumber">Enter Roll Number:</label>
+          <input
+            type="text"
+            id="rollNumber"
+            required
+            placeholder="e.g., 22F-1234"
+          />
+          <button type="submit">Create Account</button>
+        </form>
+      </section>
+
+      <section id="accountSection" style="display: none">
+        <h2>Account Details</h2>
+        <p>
+          <strong>Account Number:</strong>
+          <span id="accountNumber"></span>
+        </p>
+        <p>
+          <strong>Current Balance:</strong>
+          PKR <span id="currentBalance"></span>
+        </p>
+
+        <h3>Make a Transaction</h3>
+        <form id="transactionForm">
+          <label for="transactionType">Transaction Type:</label>
+          <select id="transactionType">
+            <option value="deposit">Deposit</option>
+            <option value="withdrawal">Withdrawal</option>
+          </select>
+
+          <label for="transactionAmount">Amount (PKR):</label>
+          <input
+            type="number"
+            id="transactionAmount"
+            required
+            placeholder="Enter amount"
+          />
+          <button type="submit">Submit</button>
+        </form>
+
+        <div id="message"></div>
+
+        <h3>Transaction History</h3>
+        <ul id="transactionHistory"></ul>
+        <button id="downloadBtn">Download Transaction History</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
