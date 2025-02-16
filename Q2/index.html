@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priority To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <div class="search-filter">
+          <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Search tasks..." />
+            <span class="search-icon">🔍</span>
+          </div>
+
+          <select id="filterPriority">
+            <option value="all">All Priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <button id="darkModeToggle">
+          <img
+            src="/images/light_mode_icon.png"
+            alt="Toggle Dark Mode"
+            id="toggleIcon"
+          />
+        </button>
+      </div>
+
+      <form class="task-form" id="taskForm">
+        <input type="text" id="taskInput" placeholder="Enter new task..." />
+        <select id="taskPriority">
+          <option value="high">High Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="low">Low Priority</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div id="taskCount"></div>
+
+      <div class="priority-section">
+        <h2>High Priority</h2>
+        <ul class="task-list" id="highPriorityList"></ul>
+      </div>
+
+      <div class="priority-section">
+        <h2>Medium Priority</h2>
+        <ul class="task-list" id="mediumPriorityList"></ul>
+      </div>
+
+      <div class="priority-section">
+        <h2>Low Priority</h2>
+        <ul class="task-list" id="lowPriorityList"></ul>
+      </div>
+
+      <div class="priority-section">
+        <h2>Completed Tasks</h2>
+        <ul class="task-list" id="completedList"></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

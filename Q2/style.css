@@ -1,0 +1,210 @@
+:root {
+  --bg-color: #f5dcdc;
+  --text-color: #2d3436;
+  --border-color: rgba(0, 0, 0, 0.3);
+  --section-bg: #ffffff;
+
+  --high-priority: #ff4757; /* Red */
+  --medium-priority: #ffa502; /* Orange */
+  --low-priority: #1e90ff; /* Blue */
+  --completed-color: Blue; /* Green */
+  --delete-color: red;
+
+  --btn-complete-bg: var(--completed-color);
+  --btn-delete-bg: var(--delete-color);
+  --btn-edit-bg: var(--medium-priority);
+
+  --toggle-icon: url("/images/light_mode_icon.png");
+}
+
+.dark-mode {
+  --bg-color: #181818;
+  --text-color: #f1f1f1;
+  --border-color: #333;
+  --section-bg: #202020;
+
+  --high-priority: #ff6b6b;
+  --medium-priority: #ffcc00;
+  --low-priority: #4c8bf5;
+  --completed-color: #27ae60;
+
+  --btn-complete-bg: var(--completed-color);
+  --btn-delete-bg: var(--high-priority);
+  --btn-edit-bg: var(--medium-priority);
+
+  --toggle-icon: url("/images/dark_mode_icon.png");
+}
+
+#darkModeToggle {
+  background: var(--border-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#darkModeToggle img {
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background: var(--text-color);
+}
+
+.dark-mode #darkModeToggle {
+  background: var(--text-color);
+  border-color: var(--bg-color);
+}
+
+.dark-mode #darkModeToggle:hover {
+  background: var(--border-color);
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr 150px 100px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input,
+select,
+button {
+  padding: 0.8rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+button {
+  background-color: #f36464;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.priority-section {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--section-bg);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+}
+
+.high-priority {
+  border-left: 4px solid var(--high-priority);
+}
+.medium-priority {
+  border-left: 4px solid var(--medium-priority);
+}
+.low-priority {
+  border-left: 4px solid var(--low-priority);
+}
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.search-filter {
+  display: flex;
+  gap: 1rem;
+}
+
+button.btn-complete {
+  background-color: var(--btn-complete-bg);
+  color: var(--bg-color);
+  border-color: var(--btn-complete-bg);
+}
+
+button.btn-delete {
+  background-color: var(--btn-delete-bg);
+  color: var(--bg-color);
+  border-color: var(--btn-delete-bg);
+}
+
+button.btn-edit {
+  background-color: var(--btn-edit-bg);
+  color: var(--bg-color);
+  border-color: var(--btn-edit-bg);
+}
+
+button.btn-complete:hover,
+button.btn-delete:hover,
+button.btn-edit:hover {
+  transform: translateY(-2px);
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Full width */
+  max-width: 400px; /* Set a max-width */
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  pointer-events: all;
+}
